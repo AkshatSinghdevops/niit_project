@@ -54,7 +54,13 @@
           
   <ul class="nav navbar-nav">        
 <li class="active"><a href="index" >Home</a></li>
-<li ><a href="Login" >Login</a></li> 
+
+
+<li >
+<c:if test="${empty  loginMessage}">
+<a href="Login" >Login</a> </c:if></li>
+
+ 
 <li><a href="Registration" >Registration</a></li>
 <li><a href="#" >About us</a></li>
 <li><a href="Contact">Contact</a></li>
@@ -80,11 +86,12 @@
 </div></div>
 </div></nav>
 <!-- -----------------------------------------=================== -->
-<div class ="container-fluid  second_bar" style="background:#808080; solid; padding:20px;" >
+<div class ="container-fluid  second_bar" style="background:#0000ff; solid; padding:20px;" >
 <div class="container">
 <div class="row">
  <div class="col-sm-12">
  <nav class="navbar-default">
+ 
  <div class="navbar-header">
  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Tnavbar">
  <span class="icon-bar"></span>
@@ -111,7 +118,6 @@
           </form>
   
   
-  
   </div>
  </div>
 </div>
@@ -123,13 +129,35 @@
 <h1 class="text-success"> This is Shopping Cart Site</h1>
 <p class="text-danger"> you need to create account first,than use this site.</p>
 <div class="text-success text-center">${msg}</div>
+<div class="text-center">${loginMessage}</div>
+
+
+<c:if test="${not empty loginMessage}">
+<a href="logout">Logout</a> <br>
+
+<c:if test="${isAdmin==true }">
+<jsp:include page="Admin/AdminHome.jsp"></jsp:include>
+ 
+ 
+</c:if>
+
+ 
+ 
+</c:if>
+
 </div>
+
+
+
+
+
+
 
 
 <c:if test="${isUserClickedContact==true }"><jsp:include page="Contact.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedLogin==true}"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
-<!--<c:if test="${isUserClickedindex==true }"><jsp:include page="index.jsp"></jsp:include></c:if> -->
+<c:if test="${isUserClickedindex==true }"><jsp:include page="index.jsp"></jsp:include></c:if> -->
 </body>
 </html>

@@ -1,11 +1,21 @@
 package com.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class homeController {
+	
+	
+	
+	@Autowired
+	private HttpSession session;
+
 	
 	
 	@RequestMapping("/")
@@ -56,18 +66,37 @@ public class homeController {
 		return mv;
 	}
 	
-/*	@RequestMapping("/index")
-	public ModelAndView showindexPage()
+
+	
+	@RequestMapping("/validate")
+	public ModelAndView validateCredentials(@RequestParam("userID") String id,@RequestParam("password") String pwd)
 	{
-		
-		//Specifying which page you have navigateion
 		ModelAndView mv = new ModelAndView("/index");
 		
-		//Specify what data you have to carry to home page
 		
-		mv.addObject("msg", "WELCOME TO SHOPPING CART");
-		mv.addObject("isUserClickedindex","true");
-		
+		if(id.equals("niit") && pwd.equals("niit@123"))
+		{
+			mv.addObject("successMessage","Valid Credentials");
+			
+			session.setAttribute("loginMessage","Welcome :" + id);
+					
+					
+		}
+		else
+		{
+			mv.addObject("errorMessage","Invalid Credentials...please try again");
+		}
 		return mv;
-	}*/
+		
+		
+		
+	}
+	@RequestMapping("/logout")
+	public ModelAndView showlogout()
+	{
+		ModelAndView mv = new ModelAndView("/index");
+		session.removeAttribute("loginMessage");
+		return mv;
+				
+	}
 }
