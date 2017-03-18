@@ -1,4 +1,4 @@
-package com.controller;
+package com.niit.shoppingcart.homecontroller;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,9 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.shoppingcart.dao.UserDAO;
+import com.niit.shoppingcart.domain.User;
+
 @Controller
 public class homeController {
 	
+
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private User user;
 	
 	
 	@Autowired
@@ -18,7 +27,7 @@ public class homeController {
 
 	
 	
-	@RequestMapping("/")
+	@RequestMapping(value={("/"),("/index")} )
 	public ModelAndView showHomePage()
 	{
 		
@@ -71,23 +80,39 @@ public class homeController {
 	@RequestMapping("/validate")
 	public ModelAndView validateCredentials(@RequestParam("userID") String id,@RequestParam("password") String pwd)
 	{
+
+		
+		//Actually you have get the data from DB
+		//Tempororily  -user->niit password =niit@123
+		
 		ModelAndView mv = new ModelAndView("/index");
+		mv.addObject("isUserLoggedIn", "false");
+		if( userDAO.validate(id, pwd)==true)
 		
-		
-		if(id.equals("niit") && pwd.equals("niit@123"))
 		{
-			mv.addObject("successMessage","Valid Credentials");
+			//Createntials are correct
+			mv.addObject("isUserLoggedIn", "true");
 			
-			session.setAttribute("loginMessage","Welcome :" + id);
-					
-					
+			user = userDAO.getUser(id);
+			
+			if(user.getRole().equals("Role_Admin"))
+			{
+				mv.addObject("isAdmin", "true");
+			}
+			else
+			{
+				mv.addObject("isAdmin", "false");
+			}
+			
+			mv.addObject("successMessage", "Valid Credentials");
+			session.setAttribute("loginMessage", "Welcome :" +id);
 		}
 		else
 		{
-			mv.addObject("errorMessage","Invalid Credentials...please try again");
+			mv.addObject("errorMessage", "InValid Credentials...please try again");
 		}
-		return mv;
 		
+		return mv;
 		
 		
 	}

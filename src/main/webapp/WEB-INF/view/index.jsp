@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<!-- - -->
+<!-- top container- -->
 <div class="container-fluid top_bar" style="background:#f26522; padding:5px;">
 <div class="container top_bar">
 <div class="row">
@@ -86,54 +86,19 @@
 </div></div>
 </div></nav>
 <!-- -----------------------------------------=================== -->
-<div class ="container-fluid  second_bar" style="background:#0000ff; solid; padding:20px;" >
-<div class="container">
-<div class="row">
- <div class="col-sm-12">
- <nav class="navbar-default">
- 
- <div class="navbar-header">
- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Tnavbar">
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- </button>
- </div>
- 
-  <div id="Tnavbar" class="navbar-collapse collapse">
-  <ul class="nav navbar-nav ">
-  <li><a href="#" >Category</a></li>
-  <li><a href="#" >Product</a></li>
-  <li> <a href="#" > Supplier</a></li>
-  </ul>
-  
-  
-  
-    <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-  
-  
-  </div>
- </div>
-</div>
-</div>
-</div>
-</nav>
+<jsp:include page="menu/secondNav.jsp"></jsp:include>
+
 <!-- ================================================================ -->
+<div class="container text-right  bg bg-danger">
+<c:if test="${not empty loginMessage}">
+<a href="logout">Logout</a> <br>
+</div>
 <div class="text-center ">
 <h1 class="text-success"> This is Shopping Cart Site</h1>
 <p class="text-danger"> you need to create account first,than use this site.</p>
-<div class="text-success text-center">${msg}</div>
+<div class="text-success text-center">${msg} </div>
 <div class="text-center">${loginMessage}</div>
-
-
-<c:if test="${not empty loginMessage}">
-<a href="logout">Logout</a> <br>
+<center>${Role}</center>
 
 <c:if test="${isAdmin==true }">
 <jsp:include page="Admin/AdminHome.jsp"></jsp:include>

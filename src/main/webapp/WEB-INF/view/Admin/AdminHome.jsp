@@ -18,7 +18,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-        <h1> Welcome To Admin page</h1>
+<div class="container">
+        <div class="text-left">
+        <h3> Welcome To Admin page</h3>
 
      <a href="manage_categories"> Manage Categories</a>
  
@@ -26,7 +28,7 @@
  
 	 <a href="manage_products"> Manage Products</a>
 
-
+</div></div>
 
 
 </body>

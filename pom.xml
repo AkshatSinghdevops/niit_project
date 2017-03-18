@@ -7,7 +7,16 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ShoppingCart Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
+ 
+<properties>
+   
+    
+  <org.springframework-version>4.3.6.RELEASE</org.springframework-version> 
+ 
+  </properties>
+
+
+<dependencies>
   <!--  backend -->
   <dependency>
   

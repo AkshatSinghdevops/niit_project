@@ -21,12 +21,12 @@
 
 
 
-<form action="validate"  method="post">
+<form action="validate"  method="post"  style="padding:20px;">
  
  
-		USER ID: <input type="text" name="userID"> <br> PASSWORD
+		USER ID: <input type="text" name="userID">  PASSWORD
 		: <input type="password" name="password"> <br> <input
-			type="submit" value="Login"> <input type="reset" value="Rest">
+			type="submit" value="Login" > <input type="reset" value="Rest">
  
  
 	</form>
