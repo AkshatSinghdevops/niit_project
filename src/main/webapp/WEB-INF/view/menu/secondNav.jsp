@@ -35,9 +35,10 @@
  
   <div id="Tnavbar" class="navbar-collapse collapse">
   <ul class="nav navbar-nav ">
-  <li><a href="#" >Category</a></li>
-  <li><a href="#" >Product</a></li>
-  <li> <a href="#" > Supplier</a></li>
+  <li><a href="index" >Home</a></li>
+  
+  <li><a href="AboutUs" >About us</a></li>
+  <li> <a href="contact" >Contact</a></li>
   </ul>
   
   
@@ -51,6 +52,24 @@
   
   
   </div>
+  
+  
+  
+   <ul class="nav navbar-nav navbar-right" >
+        <button type="button" class="btn btn-success dropdown-toggle"  style="margin:8px">
+       <li><a href="Mycart" style="color:#ffff00" class="social_icon" ><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#fff;">My_Cart</i></a></li>
+       </button>
+       
+       <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
+      <c:if test="${empty loginMessage}">
+      <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       </c:if>
+    </ul>
+  
+  
+  
+  
  </div>
 </div>
 </div>

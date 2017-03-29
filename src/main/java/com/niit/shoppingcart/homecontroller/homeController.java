@@ -27,7 +27,7 @@ public class homeController {
 
 	
 	
-	@RequestMapping(value={("/"),("/index")} )
+	@RequestMapping(value = {("/"),("/index")})
 	public ModelAndView showHomePage()
 	{
 		
@@ -44,7 +44,7 @@ public class homeController {
 	public ModelAndView showLoginPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Hey Hello Brother , WELCOME TO LOGIN PAGE");
+		mv.addObject("msg", "  WELCOME TO HOME PAGE");
 		mv.addObject("isUserClickedLogin","true");
 		return mv;
 	}
@@ -53,8 +53,9 @@ public class homeController {
 	public ModelAndView showRegistrationPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Now you enter the register page , WELCOME TO Registration page ");
+		mv.addObject("msg", "  WELCOME TO Registration page ");
 		mv.addObject("isUserClickedRegistration","true");
+		mv.addObject("user",user);
 		return mv;
 	}
 	
@@ -96,12 +97,14 @@ public class homeController {
 			user = userDAO.getUser(id);
 			
 			if(user.getRole().equals("Role_Admin"))
-			{
+			{   
 				mv.addObject("isAdmin", "true");
+				mv.addObject("role", "Admin");
 			}
 			else
 			{
 				mv.addObject("isAdmin", "false");
+				mv.addObject("role", "User");
 			}
 			
 			mv.addObject("successMessage", "Valid Credentials");
@@ -123,5 +126,13 @@ public class homeController {
 		session.removeAttribute("loginMessage");
 		return mv;
 				
+	}
+	
+	@RequestMapping("/Mycart")
+	public ModelAndView showMycart()
+	{
+		ModelAndView mv = new ModelAndView("/index");
+		mv.addObject("isUserClickedMycart", "true");
+		return mv;
 	}
 }

@@ -28,8 +28,8 @@ public class CategoryController {
 			@RequestParam("name")String name, @RequestParam("description")String description)
 	{
 		
-		category.setID(id);
-		category.setNAME(name);
+		category.setId(id);
+		category.setName(name);
 		category.setDescription(description);
 		
 		ModelAndView mv = new ModelAndView("Redirect:/manage_categories");

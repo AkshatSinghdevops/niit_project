@@ -8,114 +8,81 @@
 </head>
 <body>
 
-<!-- This is form section -->
-<div class ="container">
-<div class="text-center">
+<div class="container">
+	<div class="row">
+		<h2>Create Acount</h2> 
+        
+        
+        
+        <form class="form-horizontal"  action="Registration" method="POST" commandName="user" >
+<fieldset>
  
- <form class="form-horizontal" role="form">
+ 
+<legend>Register Here</legend>
+ 
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" path="name"> Name:</label>  
+  <div class="col-md-4">
+  <input path="name" name="name" placeholder="Insert your  Name" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+ 
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" path="id">User-ID:</label>  
+  <div class="col-md-4">
+  <input path="id" name="id" placeholder="Insert your Id Name" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+ 
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" path="password">Password:</label>  
+  <div class="col-md-4">
+  <input path="password" name="password" placeholder="Insert your Password" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+ 
+ 
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" path="mail">Email:</label>  
+  <div class="col-md-4">
+  <input path="mail" name="mail" placeholder="Insert your Email" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+ 
+ 
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" path="contact">Phone No:</label>  
+  <div class="col-md-4">
+  <input path="contact" name="contact" placeholder="Insert your Contact" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"> </label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+ 
+</fieldset>
+</form>
+ 
+	</div>
+</div>
+ 
 
- <h2> Registration Form</h2>
+ 
 
-<!-- this is first row -->
- 
- <div class="from-group">
- <label for="name" class="col-sm-3 control-label">Name:</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
-  <!-- this is first row -->
- 
- <div class="from-group">
- <label for="User" class="col-sm-3 control-label">User Id :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="User" placeholder="Enter User Id " autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
- <!-- this is first row -->
- 
- <div class="from-group">
- <label for="Email" class="col-sm-3 control-label">Email :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="Email" placeholder="Enter Email" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
-  <!-- this is first row -->
- 
- <div class="from-group">
- <label for="password" class="col-sm-3 control-label">Password :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="Email" placeholder="Enter Password" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
- <div class="form-group">
-                    <label for="country" class="col-sm-3 control-label">Country :</label>
-                    <div class="col-sm-9">
-                        <select id="country" class="form-control">
-                            <option>Rewa</option>
-                            <option>Bhopal</option>
-                               <option>Indor</option>
-                                  <option>somewhere</option>
-                        </select>
-                    </div>
- </div>
- 
- 
-   <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                
-                
-                
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">I accept <a href="#">terms</a>
-                            </label>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-                
-                
- </form></div></div>
- 
  
  
  

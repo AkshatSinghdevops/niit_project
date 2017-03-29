@@ -16,7 +16,7 @@
 <body>
 
 <!-- top container- -->
-<div class="container-fluid top_bar" style="background:#f26522; padding:5px;">
+<div class="container-fluid top_bar" style="background:#ff8000; padding:5px;">
 <div class="container top_bar">
 <div class="row">
 <div class="col-sm-6">
@@ -37,7 +37,7 @@
 </div>
 </div>
 </div>
-<!--  -->
+<!--  
 <nav class="navbar-default ">
 <div class="container top_bar">
 <div class="row">
@@ -56,9 +56,7 @@
 <li class="active"><a href="index" >Home</a></li>
 
 
-<li >
-<c:if test="${empty  loginMessage}">
-<a href="Login" >Login</a> </c:if></li>
+
 
  
 <li><a href="Registration" >Registration</a></li>
@@ -84,45 +82,36 @@
 
 </ul>
 </div></div>
-</div></nav>
-<!-- -----------------------------------------=================== -->
+</div></nav>         -->
+<!-- ================================================================ -->
 <jsp:include page="menu/secondNav.jsp"></jsp:include>
 
 <!-- ================================================================ -->
-<div class="container text-right  bg bg-danger">
-<c:if test="${not empty loginMessage}">
-<a href="logout">Logout</a> <br>
-</div>
+
+
+
 <div class="text-center ">
 <h1 class="text-success"> This is Shopping Cart Site</h1>
-<p class="text-danger"> you need to create account first,than use this site.</p>
 <div class="text-success text-center">${msg} </div>
-<div class="text-center">${loginMessage}</div>
-<center>${Role}</center>
-
-<c:if test="${isAdmin==true }">
-<jsp:include page="Admin/AdminHome.jsp"></jsp:include>
- 
- 
-</c:if>
-
- 
- 
-</c:if>
-
+<div class="text-center">${loginMessage} </div>
+${role}
+<center>${successR}</center>
+<center>${errorR}</center>
 </div>
 
 
 
 
 
-
-
-
+<c:if test="${isUserCategoryPage==true}"><jsp:include page="Admin/Category.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedMycart==true}"><jsp:include page="Mycart.jsp"></jsp:include>   </c:if>
+<c:if test="${isAdmin==true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedContact==true }"><jsp:include page="Contact.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedLogin==true}"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
-<c:if test="${isUserClickedindex==true }"><jsp:include page="index.jsp"></jsp:include></c:if> -->
+<c:if test="${isUserClickedindex==true }"><jsp:include page="index.jsp"></jsp:include></c:if> 
+<c:if test="${isUserProduct==true}"><jsp:include page="Admin/Product.jsp"></jsp:include></c:if>
+<c:if test="${ClickedSupplier==true }"> <jsp:include page="Admin/Supplier.jsp"></jsp:include></c:if>
 </body>
 </html>

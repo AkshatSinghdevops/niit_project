@@ -21,15 +21,42 @@
 
 
 
-<form action="validate"  method="post"  style="padding:20px;">
+<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Please sign in</h3>
+					</div>
+					<div class="panel-body">
+						
+							<div class="alert alert-danger">
+								<div class="text-center">
+								Login Here
+							</div></div>
+						
+						<form action="validate" method="post">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="User Name"
+										 type="text" id="userID" name="userID">
+								</div>
  
+								<div class="form-group">
+									<input class="form-control" placeholder="Password"  type="password" value="" 
+									 id="password" name ="password">
+								</div>
  
-		USER ID: <input type="text" name="userID">  PASSWORD
-		: <input type="password" name="password"> <br> <input
-			type="submit" value="Login" > <input type="reset" value="Rest">
+								<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
  
- 
-	</form>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 
 

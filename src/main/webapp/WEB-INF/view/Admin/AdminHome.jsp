@@ -19,17 +19,17 @@
 </head>
 <body>
 <div class="container">
-        <div class="text-left">
+        <div class="text-Center">
         <h3> Welcome To Admin page</h3>
 
-     <a href="manage_categories"> Manage Categories</a>
+<a href="manage_categories">ManageCategory |</a>
+<a href="ManageProduct">ManageProduct  |</a>
+<a href="ManageSupplier">ManageSupplier</a>
+  </div></div>
  
-	 <a href="manage_suppliers"> Manage Supplier</a>
- 
-	 <a href="manage_products"> Manage Products</a>
-
-</div></div>
-
-
+<c:if test="${isUserCategoryPage==true}"><jsp:include page="Category.jsp"></jsp:include></c:if>
+<c:if test="${ClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>
+ <c:if test="${isUserProduct==true }"><jsp:include page="Product.jsp"></jsp:include></c:if>
+    
 </body>
 </html>
