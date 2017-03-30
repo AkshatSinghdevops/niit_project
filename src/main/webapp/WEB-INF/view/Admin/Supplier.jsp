@@ -20,6 +20,14 @@
 Supplier
 
 <h2>Manage Supplier </h2>
+
+<div class ="container-fluid  second_bar" style="background:#00ffff; solid; padding:20px;" >
+<div class="container">
+
+<div class="row">
+ <div class="col-sm-12">
+ <nav class="navbar-default">
+
 <table class="table">
 <thead>
 <tr>
@@ -52,8 +60,11 @@ Supplier
 
 
 </table>
-
-
+</nav>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 </html>

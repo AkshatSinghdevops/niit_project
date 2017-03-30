@@ -15,37 +15,5 @@ import com.niit.shoppingcart.domain.User;
 public class UserController {
 
 	
-	@Autowired
-	User user;
-	
-	@Autowired
-	UserDAO userDAO;
-	
-	
-	@RequestMapping(value = "/Registration" , method=RequestMethod.POST)
-	public ModelAndView registerPage(@ModelAttribute User user,    @ModelAttribute("id")String id,@ModelAttribute("name")String name,
-			@ModelAttribute("password")String password,@ModelAttribute("mail")String mail,@ModelAttribute("contact")String contact)
-	{
-		
-
-		
-	      user.setId(id);
-	      user.setMail(mail);
-	      user.setName(name);
-	      user.setPassword(password);
-	      user.setContact(contact);
-	      user.setRole("Role_User");
-	      
-	      ModelAndView mv = new ModelAndView("/index");
-	      if(userDAO.save(user))
-	      {
-	    	  mv.addObject("successR", "Success To Registration");
-	      }
-	      else
-	      {
-	    	  mv.addObject("errorR" ,"you are not Register go to Page Contact or About us ");
-	      }
-	      return mv;
-	}
 	
 }

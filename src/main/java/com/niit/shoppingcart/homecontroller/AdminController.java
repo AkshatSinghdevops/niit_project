@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Supplier;
 
 
@@ -28,6 +30,12 @@ public class AdminController {
 	
 	@Autowired
 	SupplierDAO supplierDAO;
+	
+	@Autowired
+	Product product;
+	
+	@Autowired
+	ProductDAO productDAO;
 	
 
 	@RequestMapping("/manage_categories")

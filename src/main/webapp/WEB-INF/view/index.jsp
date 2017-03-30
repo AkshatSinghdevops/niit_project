@@ -37,7 +37,7 @@
 </div>
 </div>
 </div>
-<!--  
+  
 <nav class="navbar-default ">
 <div class="container top_bar">
 <div class="row">
@@ -59,7 +59,7 @@
 
 
  
-<li><a href="Registration" >Registration</a></li>
+
 <li><a href="#" >About us</a></li>
 <li><a href="Contact">Contact</a></li>
 
@@ -82,7 +82,7 @@
 
 </ul>
 </div></div>
-</div></nav>         -->
+</div></nav>         
 <!-- ================================================================ -->
 <jsp:include page="menu/secondNav.jsp"></jsp:include>
 

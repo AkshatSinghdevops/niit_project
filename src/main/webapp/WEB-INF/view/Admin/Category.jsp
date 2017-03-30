@@ -26,6 +26,14 @@
 </div>
 
 
+<div class ="container-fluid  second_bar" style="background:#00ffff; solid; padding:20px;" >
+<div class="container">
+
+<div class="row">
+ <div class="col-sm-12">
+ <nav class="navbar-default">
+
+
 
 <div class="container">
 <h3>Category Details</h3>
@@ -56,6 +64,11 @@
 </div>
 
 
+</nav>
+</div>
+</div>
+</div>
+</div>
 
 
 
