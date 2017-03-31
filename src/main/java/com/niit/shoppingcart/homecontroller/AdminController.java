@@ -74,6 +74,9 @@ public class AdminController {
 		 ModelAndView mv = new ModelAndView("/index");
 		 mv.addObject("isUserProduct","true");
 		 
+		 List<Product> productList =  productDAO.list();
+		 mv.addObject("productList",productList);
+		 mv.addObject("product",product);
 		 
 		 return mv;
 	}

@@ -29,6 +29,52 @@
 <div class ="container-fluid  second_bar" style="background:#00ffff; solid; padding:20px;" >
 <div class="container">
 
+
+>
+
+
+<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title ">Create  New Category</h3>
+					</div>
+					<div class="panel-body">
+						
+							</div>
+<form action="#" method="post">
+		<fieldset>
+		<div class="form-group">
+         <input class="form-control" placeholder="category_id"
+		type="text" id="id" name="id">
+	    </div>
+	    
+	    
+	    <div class="form-group">
+         <input class="form-control" placeholder="category_name"
+		type="text" id="name" name="name">
+	    </div>
+	    
+	    
+	    
+	    <div class="form-group">
+         <input class="form-control" placeholder="category_description"
+		type="text" id="description" name="description">
+	    </div>
+	    
+	    
+	    <input class="btn btn-lg btn-success btn-block" type="submit" value="Create-Category">
+	    
+	    
+
+
+</fieldset></form>	    
+</div></div>
+</div></div>
+
+
+
 <div class="row">
  <div class="col-sm-12">
  <nav class="navbar-default">
@@ -55,11 +101,12 @@
                      <td>${category.id}</td>
 					 <td>${category.name}</td>
 					 <td>${category.description}</td>
-
+                     <td><a href="#">Edit |</a>
+                     <a href="#">Delete</a></td>
 </tr>
- </c:forEach>
+</c:forEach>
 </tbody>
- 
+  
 </table>
 </div>
 
