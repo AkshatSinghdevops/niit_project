@@ -43,7 +43,7 @@
 					<div class="panel-body">
 						
 							</div>
-<form action="#" method="post">
+<form action="/manage_category_create" method="post">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="category_id"

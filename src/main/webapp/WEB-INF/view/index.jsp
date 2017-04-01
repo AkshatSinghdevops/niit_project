@@ -111,7 +111,7 @@ ${role}
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedindex==true }"><jsp:include page="index.jsp"></jsp:include></c:if> 
-<c:if test="${isUserProduct==true}"><jsp:include page="Admin/Product.jsp"></jsp:include></c:if>
-<c:if test="${ClickedSupplier==true }"> <jsp:include page="Admin/Supplier.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedProduct==true}"><jsp:include page="Admin/Product.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedSupplier==true }"> <jsp:include page="Admin/Supplier.jsp"></jsp:include></c:if>
 </body>
 </html>

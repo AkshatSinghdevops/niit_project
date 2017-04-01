@@ -5,8 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="resource/css/mystyle.css">
+<link rel="stylesheet" href="resource/img/im.jpg">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+
+Manage Product
 
 <div class ="container-fluid  second_bar" style="background:#808080; solid; padding:20px;" >
 <div class="container">
@@ -27,7 +41,7 @@
 					<div class="panel-body">
 						
 							</div>
-<form action="#" method="post">
+<form action="/product_create" method="post" enctype="multipart/form-data">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="product_id"
@@ -51,8 +65,15 @@
 	     
 	    <div class="form-group">
          <input class="form-control" placeholder="product_price"
-		type="text" id="description" name="description">
+		type="text" id="price" name="price">
 	    </div>
+	    
+	    
+	      
+	    <div class="form-group">
+         <input class="form-control" type="file" id="image" name="image">
+	    </div>
+	    
 	    
 	    
 	    <input class="btn btn-lg btn-success btn-block" type="submit" value="Create-Product">

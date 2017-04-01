@@ -59,7 +59,7 @@ public class AdminController {
 	{
 		System.out.println("Manage Suppplier");
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("ClickedSupplier",true);
+		mv.addObject("isUserClickedSupplier",true);
 		
 		List<Supplier> supplierList  = supplierDAO.list();
 		mv.addObject("supplierList" , supplierList);
@@ -72,7 +72,7 @@ public class AdminController {
 	{
 		 System.out.println("manage product");
 		 ModelAndView mv = new ModelAndView("/index");
-		 mv.addObject("isUserProduct","true");
+		 mv.addObject("isUserClickedProduct","true");
 		 
 		 List<Product> productList =  productDAO.list();
 		 mv.addObject("productList",productList);

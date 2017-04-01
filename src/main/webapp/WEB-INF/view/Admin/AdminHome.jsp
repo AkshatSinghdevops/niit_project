@@ -28,8 +28,8 @@
   </div></div>
  
 <c:if test="${isUserCategoryPage==true}"><jsp:include page="Category.jsp"></jsp:include></c:if>
-<c:if test="${ClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>
- <c:if test="${isUserProduct==true }"><jsp:include page="Product.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>
+ <c:if test="${isUserClickedProduct==true }"><jsp:include page="Product.jsp"></jsp:include></c:if>
     
 </body>
 </html>
