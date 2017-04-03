@@ -29,9 +29,14 @@
 <div class ="container-fluid  second_bar" style="background:#00ffff; solid; padding:20px;" >
 <div class="container">
 
+<form action="manage_category_create" method="post">
+<input type="text" name="id">
+<input type="text" name="name">
+<input type="text" name="description">
+<input type="submit" value="Create">
+</form>
 
->
-
+<!--
 
 <div class="container">
 		<div class="row">
@@ -43,7 +48,7 @@
 					<div class="panel-body">
 						
 							</div>
-<form action="/manage_category_create" method="post">
+<form action="manage_category_add" method="post" commandName="category">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="category_id"
@@ -73,7 +78,7 @@
 </div></div>
 </div></div>
 
-
+ -->
 
 <div class="row">
  <div class="col-sm-12">

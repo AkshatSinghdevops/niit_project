@@ -73,6 +73,7 @@ public class AdminController {
 		 System.out.println("manage product");
 		 ModelAndView mv = new ModelAndView("/index");
 		 mv.addObject("isUserClickedProduct","true");
+		 mv.addObject("category",category);
 		 
 		 List<Product> productList =  productDAO.list();
 		 mv.addObject("productList",productList);
