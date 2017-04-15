@@ -19,13 +19,14 @@
 </head>
 <body>
 <div class="container">
+<nav class="navbar-inverse">
         <div class="text-Center">
-        <h3> Welcome To Admin page</h3>
+        <h3 style="color:red;"> Welcome To Admin page</h3>
 
 <a href="manage_categories">ManageCategory |</a>
-<a href="ManageProduct">ManageProduct  |</a>
-<a href="ManageSupplier">ManageSupplier</a>
-  </div></div>
+<a href="manage_product">ManageProduct  |</a>
+<a href="manage_supplier">ManageSupplier</a>
+ </nav> </div></div>
  
 <c:if test="${isUserCategoryPage==true}"><jsp:include page="Category.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>

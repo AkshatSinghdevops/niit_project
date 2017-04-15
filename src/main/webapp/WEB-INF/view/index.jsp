@@ -100,7 +100,7 @@ ${role}
 </div>
 
 
-
+<jsp:include page="carousel.jsp"></jsp:include>
 
 
 <c:if test="${isUserCategoryPage==true}"><jsp:include page="Admin/Category.jsp"></jsp:include></c:if>

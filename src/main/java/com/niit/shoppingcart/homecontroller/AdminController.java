@@ -2,6 +2,9 @@ package com.niit.shoppingcart.homecontroller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,7 @@ import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.domain.Category;
 import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Supplier;
+import com.niit.shoppingcart.domain.User;
 
 
 @Controller
@@ -37,12 +41,36 @@ public class AdminController {
 	@Autowired
 	ProductDAO productDAO;
 	
+	@Autowired
+	User user;
+	
+	
+	
+
+	@Autowired
+	private HttpSession session;
+	
 
 	@RequestMapping("/manage_categories")
 	public ModelAndView manageCategories()
 	{
+		
+		ModelAndView mv;
+		user=(User)session.getAttribute("loggedInUser");
+		if(user==null)
+		{
+			mv = new ModelAndView("/index");
+		}
+		else
+		{
+			 if(!user.getRole().equals("Role_Admin"))
+			 {
+				 mv=new ModelAndView("/index");
+			 }
+		}
+		
 		System.out.println("manageCategories");
-		ModelAndView mv = new ModelAndView("/index");
+		 mv = new ModelAndView("/index");
 		mv.addObject("isUserCategoryPage","true");
 		//get the categories from db.
 		
@@ -54,7 +82,7 @@ public class AdminController {
 		
 	}
 	
-	@RequestMapping("/ManageSupplier")
+	@RequestMapping("/manage_supplier")
 	public ModelAndView manageSupplier()
 	{
 		System.out.println("Manage Suppplier");
@@ -67,7 +95,7 @@ public class AdminController {
 		return mv;
 	}
 	
-	@RequestMapping("/ManageProduct")
+	@RequestMapping("/manage_product")
 	public ModelAndView manageProduct()
 	{
 		 System.out.println("manage product");

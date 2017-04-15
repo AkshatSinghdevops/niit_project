@@ -40,7 +40,7 @@ Supplier
 					<div class="panel-body">
 						
 							</div>
-<form action="#" method="post">
+<form action="manage_supplier_create" method="post">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="supplier_id"
@@ -57,7 +57,7 @@ Supplier
 	    
 	    <div class="form-group">
          <input class="form-control" placeholder="supplier_address"
-		type="text" id="description" name="description">
+		type="text" id="address" name="address">
 	    </div>
 	    
 	    
@@ -101,8 +101,9 @@ Supplier
 <td>${supplier.id}</td>
 <td>${supplier.name}</td>
 <td>${supplier.address}</td>
-<td><a href="#">Edit |</a>
-                     <a href="#">Delete</a></td>
+<td><a href="<c:url value='/manage_supplier_edit/${supplier.id}' />">Edit</a></td>
+					
+					<td><a href="<c:url value='/manage_supplier_remove/${supplier.id}' />">Delete</a></td>
 </tr>
 
 

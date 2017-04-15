@@ -29,14 +29,9 @@
 <div class ="container-fluid  second_bar" style="background:#00ffff; solid; padding:20px;" >
 <div class="container">
 
-<form action="manage_category_create" method="post">
-<input type="text" name="id">
-<input type="text" name="name">
-<input type="text" name="description">
-<input type="submit" value="Create">
-</form>
 
-<!--
+
+
 
 <div class="container">
 		<div class="row">
@@ -48,7 +43,7 @@
 					<div class="panel-body">
 						
 							</div>
-<form action="manage_category_add" method="post" commandName="category">
+<form action="manage_category_create" method="POST" commandName="category">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="category_id"
@@ -78,7 +73,7 @@
 </div></div>
 </div></div>
 
- -->
+
 
 <div class="row">
  <div class="col-sm-12">
@@ -106,8 +101,16 @@
                      <td>${category.id}</td>
 					 <td>${category.name}</td>
 					 <td>${category.description}</td>
-                     <td><a href="#">Edit |</a>
-                     <a href="#">Delete</a></td>
+                     
+                     
+                     
+                     	<td><a href="<c:url value='/manage_category_edit/${category.id}' />">Edit</a></td>
+					
+					<td><a href="<c:url value='/manage_category_remove/${category.id}' />">Delete</a></td>
+                     
+
+
+
 </tr>
 </c:forEach>
 </tbody>

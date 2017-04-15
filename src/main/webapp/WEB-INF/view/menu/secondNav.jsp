@@ -60,10 +60,19 @@
        <li><a href="Mycart" style="color:#ffff00" class="social_icon" ><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#fff;">My_Cart</i></a></li>
        </button>
        
+       
        <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
       <c:if test="${empty loginMessage}">
+      <button type="button" class="btn btn-danger dropdown-toggle"  style="margin:8px">
       <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </button>
+             <button type="button" class="btn btn-info dropdown-toggle"  style="margin:8px">
+       
       <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       </button>
+       
+       
+       
        </c:if>
     </ul>
   

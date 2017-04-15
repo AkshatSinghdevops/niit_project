@@ -41,7 +41,7 @@ Manage Product
 					<div class="panel-body">
 						
 							</div>
-<form action="/product_create" method="post" enctype="multipart/form-data">
+<form action="uploadFile.do" method="post" enctype="multipart/form-data">
 		<fieldset>
 		<div class="form-group">
          <input class="form-control" placeholder="product_id"
@@ -68,10 +68,18 @@ Manage Product
 		type="text" id="price" name="price">
 	    </div>
 	    
+	    <div class="form-group">
+         <input class="form-control" placeholder="c_id"
+		type="text" id="category_id" name="category_id">
+	    </div>
 	    
+	    <div class="form-group">
+         <input class="form-control" placeholder="s_id"
+		type="text" id="supplier_id" name="supplier_id">
+	    </div>
 	      
 	    <div class="form-group">
-         <input class="form-control" type="file" id="image" name="image">
+         <input class="form-control" type="file" id="image" name="image" value="Upload">
 	    </div>
 	    
 	    
@@ -105,7 +113,8 @@ Manage Product
 <tr>
 <th>Id</th>
 <th>Name</th>
-<th>Address</th>
+<th>Price</th>
+<th>Description</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -119,7 +128,7 @@ Manage Product
 <td>${product.name}</td>
 <td>${product.price}</td>
 <td>${product.description}</td>
-<td>${product.image}</td>
+
 <td><a href="#">Edit |</a>
                      <a href="#">Delete</a></td>
 

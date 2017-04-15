@@ -44,7 +44,7 @@ public class homeController {
 	public ModelAndView showLoginPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", "  WELCOME TO HOME PAGE");
+		mv.addObject("msg", "  WELCOME TO LOGIN PAGE");
 		mv.addObject("isUserClickedLogin","true");
 		return mv;
 	}
@@ -88,32 +88,39 @@ public class homeController {
 		
 		ModelAndView mv = new ModelAndView("/index");
 		mv.addObject("isUserLoggedIn", "false");
+		
 		if( userDAO.validate(id, pwd)==true)
 		
-		{
+		{session.setAttribute("loggedInUser", user);
 			//Createntials are correct
 			mv.addObject("isUserLoggedIn", "true");
 			
 			user = userDAO.getUser(id);
 			
 			if(user.getRole().equals("Role_Admin"))
-			{   
+			{   session.setAttribute("loggedInUser", user);
 				mv.addObject("isAdmin", "true");
 				mv.addObject("role", "Admin");
 			}
 			else
-			{
+			{session.setAttribute("loggedInUser", user);
 				mv.addObject("isAdmin", "false");
-				mv.addObject("role", "User");
+				mv.addObject("role", "user");
 			}
 			
 			mv.addObject("successMessage", "Valid Credentials");
 			session.setAttribute("loginMessage", "Welcome :" +id);
+			
+			
+			session.setAttribute("loggedInUser", user);
 		}
 		else
 		{
 			mv.addObject("errorMessage", "InValid Credentials...please try again");
 		}
+		
+		session.setAttribute("loggedInUser", user);
+
 		
 		return mv;
 		
